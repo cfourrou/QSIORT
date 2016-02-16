@@ -63,14 +63,14 @@
 
         var featureLayer;
 		
-function showExtent(extent) {
+        function showExtent(extent) {
         var s = "";
         s = "XMin: "+ extent.xmin.toFixed(2) + "&nbsp;"
            +"YMin: " + extent.ymin.toFixed(2) + "&nbsp;"
            +"XMax: " + extent.xmax.toFixed(2) + "&nbsp;"
            +"YMax: " + extent.ymax.toFixed(2);
         dojo.byId("info").innerHTML = s;
-      }
+        }
         // Create a feature layer to get feature service
         function addFeatureService() {
           removeFeatureService();
@@ -105,8 +105,8 @@ function showExtent(extent) {
             if (featureLayer){
               var layerUpdated = featureLayer.on("update-end", function(result) {
                 // Zoom to all of the features   
-                var extent = graphicsUtils.graphicsExtent(result.target.graphics);   
-                map.setExtent(extent);
+                //var extent = graphicsUtils.graphicsExtent(result.target.graphics);   
+                //map.setExtent(extent);
                 // Only do this once
                 layerUpdated.remove();
                 dom.byId("inputUrl").value = result.target.url;    
